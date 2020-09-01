@@ -9,13 +9,13 @@ import kotlinx.coroutines.flow.Flow
 interface GithubRepositoryDAO {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertRepositories(repositories: GithubRepositoriesModel)
+    fun insertRepositories(repositories: GithubRepositoryModel)
 
-    @Delete
+    @Query("DELETE FROM repository")
     fun deleteAllRepositories()
 
     @Query("SELECT * FROM repository")
-    fun selectAllRepositories(): Flow<GithubRepositoriesModel>
+    fun selectAllRepositories(): Flow<List<GithubRepositoryModel>>
 
     @Query("SELECT * FROM repository WHERE name = :name")
     fun getRepositoryByName(name: String): Flow<GithubRepositoryModel>

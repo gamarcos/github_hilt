@@ -1,7 +1,7 @@
 package br.com.grabrielmarcos.githubhilt.plugin.di.database
 
+import android.app.Application
 import android.content.Context
-import br.com.grabrielmarcos.githubhilt.model.GithubRepositoriesModel
 import br.com.grabrielmarcos.githubhilt.plugin.room.GithubRepositoryDAO
 import br.com.grabrielmarcos.githubhilt.plugin.room.GithubRepositoryDatabase
 import dagger.Module
@@ -13,13 +13,13 @@ class DatabaseModule {
 
     @Provides
     @Singleton
-    fun providesDatabase(context: Context): GithubRepositoryDatabase {
-        return GithubRepositoryDatabase.getInstanceDatabase(context)
+    fun providesDatabase(application: Application): GithubRepositoryDatabase {
+        return GithubRepositoryDatabase.getInstanceDatabase(application)
     }
 
     @Provides
     @Singleton
-    fun providesCharacterDao(database: GithubRepositoryDatabase): GithubRepositoryDAO {
+    fun providesGithubRepositoryDAO(database: GithubRepositoryDatabase): GithubRepositoryDAO {
         return database.getRepositoryDao()
     }
 }

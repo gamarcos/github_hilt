@@ -1,9 +1,10 @@
 package br.com.grabrielmarcos.githubhilt.plugin.di.application
 
 import android.app.Application
-import br.com.grabrielmarcos.githubhilt.feature.base.di.MainActivityModuleBuilder
+import br.com.grabrielmarcos.githubhilt.feature.base.di.ActivityModule
 import br.com.grabrielmarcos.githubhilt.plugin.di.module.SetupConfigBuilderModule
 import br.com.grabrielmarcos.githubhilt.plugin.main.GithubRepositoriesApplication
+import br.com.grabrielmarcos.githubhilt.plugin.room.GithubRepositoryDAO
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -14,7 +15,7 @@ import javax.inject.Singleton
 @Component(
     modules = [
         AndroidInjectionModule::class,
-        MainActivityModuleBuilder::class,
+        ActivityModule::class,
         SetupConfigBuilderModule::class
     ]
 )
@@ -29,4 +30,6 @@ interface AppComponent {
     }
 
     fun injectApplication(application: GithubRepositoriesApplication)
+
+    fun repositoryDAO(): GithubRepositoryDAO
 }

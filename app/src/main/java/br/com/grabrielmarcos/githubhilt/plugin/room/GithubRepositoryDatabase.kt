@@ -1,5 +1,6 @@
 package br.com.grabrielmarcos.githubhilt.plugin.room
 
+import android.app.Application
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
@@ -7,7 +8,7 @@ import androidx.room.RoomDatabase
 import br.com.grabrielmarcos.githubhilt.model.GithubRepositoriesModel
 import br.com.grabrielmarcos.githubhilt.model.GithubRepositoryModel
 
-@Database(entities = [GithubRepositoryModel::class], version = 1)
+@Database(entities = [GithubRepositoryModel::class], version = 1, exportSchema = true)
 abstract class GithubRepositoryDatabase : RoomDatabase() {
 
     abstract fun getRepositoryDao(): GithubRepositoryDAO
@@ -19,9 +20,9 @@ abstract class GithubRepositoryDatabase : RoomDatabase() {
         private var INSTANCE: GithubRepositoryDatabase? = null
 
         @JvmStatic
-        fun getInstanceDatabase(context: Context): GithubRepositoryDatabase =
+        fun getInstanceDatabase(application: Application): GithubRepositoryDatabase =
             INSTANCE ?: synchronized(this) {
-                INSTANCE ?: buildDatabase(context).also { INSTANCE = it }
+                INSTANCE ?: buildDatabase(application.baseContext).also { INSTANCE = it }
             }
 
         private fun buildDatabase(context: Context): GithubRepositoryDatabase {

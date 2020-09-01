@@ -12,13 +12,14 @@ import javax.inject.Inject
 
 class GithubRepositoryImpl @Inject constructor(
     private var api: API,
-    private val dao: GithubRepositoryDAO
+    private var dao: GithubRepositoryDAO
 ) : GithubRepository {
+
     override fun getGithubRepositories(pageParams: PageParams): Flow<GithubRepositoriesModel> {
         return api.requestCharacters(pageParams.offset, pageParams.limit)
     }
 
-    override fun saveRepositories(repos: GithubRepositoriesModel) = dao.insertRepositories(repos)
+    override fun saveRepositories(repos: GithubRepositoriesModel) = dao.insertRepositories(repos.items[0])
 
     override fun getRepositoryByName(name: String): Flow<GithubRepositoryModel> = dao.getRepositoryByName(name)
 

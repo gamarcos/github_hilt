@@ -7,8 +7,7 @@ import br.com.grabrielmarcos.githubhilt.feature.base.gateway.BaseViewModel
 import br.com.grabrielmarcos.githubhilt.feature.base.view.BaseActivity
 import br.com.grabrielmarcos.githubhilt.feature.repositories.gateway.DataSourceState
 import br.com.grabrielmarcos.githubhilt.feature.repositories.gateway.RepositoriesViewModel
-import kotlinx.android.synthetic.main.fragment_github_repository.*
-
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
 

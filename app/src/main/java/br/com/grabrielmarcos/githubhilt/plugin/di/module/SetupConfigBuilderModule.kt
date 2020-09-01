@@ -5,5 +5,6 @@ import br.com.grabrielmarcos.githubhilt.plugin.di.network.NetworkModule
 import br.com.grabrielmarcos.githubhilt.plugin.di.viewmodel.ViewModelFactoryModule
 import dagger.Module
 
-@Module(includes = [NetworkModule::class, ViewModelFactoryModule::class, DatabaseModule::class])
+@Module(includes = [
+    NetworkModule::class, ViewModelFactoryModule::class, DatabaseModule::class])
 abstract class SetupConfigBuilderModule
