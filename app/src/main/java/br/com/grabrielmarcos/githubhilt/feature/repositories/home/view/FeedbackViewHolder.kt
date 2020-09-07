@@ -1,13 +1,13 @@
-package br.com.grabrielmarcos.githubhilt.feature.repositories.view
+package br.com.grabrielmarcos.githubhilt.feature.repositories.home.view
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import br.com.grabrielmarcos.githubhilt.R
-import br.com.grabrielmarcos.githubhilt.feature.repositories.extetions.hide
-import br.com.grabrielmarcos.githubhilt.feature.repositories.extetions.show
-import br.com.grabrielmarcos.githubhilt.feature.repositories.gateway.DataSourceState
+import br.com.grabrielmarcos.githubhilt.feature.repositories.home.extetions.hide
+import br.com.grabrielmarcos.githubhilt.feature.repositories.home.extetions.show
+import br.com.grabrielmarcos.githubhilt.feature.repositories.home.gateway.DataSourceState
 import kotlinx.android.synthetic.main.item_feedback.view.*
 
 class FeedbackViewHolder(view: View): RecyclerView.ViewHolder(view) {

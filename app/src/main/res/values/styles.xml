@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -5,6 +6,48 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/colorPrimary</item>
+    </style>
+
+    <style name="TextAppearance" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/font_family</item>
+    </style>
+
+    <style name="TextAppearance.Big">
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="TextAppearance.Dark">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="TextAppearance.Gold">
+        <item name="android:textColor">@color/starColor</item>
+    </style>
+
+    <style name="TextAppearance.Dark.Bold">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="TextAppearance.Dark.Medium">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="TextAppearance.Dark.Small">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="TextAppearance.Gold.Small">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="TextAppearance.Dark.ExtraSmall">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextAppearance.Gray">
+        <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
 </resources>

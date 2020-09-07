@@ -1,4 +1,4 @@
-package br.com.grabrielmarcos.githubhilt.feature.repositories.view
+package br.com.grabrielmarcos.githubhilt.feature.repositories.home.view
 
 import android.view.LayoutInflater
 import android.view.View
@@ -21,8 +21,7 @@ class RepositoryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
             itemView.item_repository_name.text = name
             itemView.item_repository_description.text = description
-            //TODO :: rever infos
-            itemView.item_repository_owner_name.text = name
+            itemView.item_repository_owner_name.text = full_name
             itemView.item_repository_owner_user.text = owner?.login
             itemView.item_repository_forks_count.text = forks?.toString()
             itemView.item_repository_stars_count.text = starts?.toString()

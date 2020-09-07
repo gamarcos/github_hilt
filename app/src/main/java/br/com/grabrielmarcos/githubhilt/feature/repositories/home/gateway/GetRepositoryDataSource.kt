@@ -1,17 +1,22 @@
-package br.com.grabrielmarcos.githubhilt.feature.repositories.gateway
+package br.com.grabrielmarcos.githubhilt.feature.repositories.home.gateway
 
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.PositionalDataSource
-import br.com.grabrielmarcos.githubhilt.feature.repositories.business.PageParams
-import br.com.grabrielmarcos.githubhilt.model.GithubRepositoriesModel
+import br.com.grabrielmarcos.githubhilt.feature.base.business.PageParams
 import br.com.grabrielmarcos.githubhilt.model.GithubRepositoryModel
 import javax.inject.Inject
 
+//TODO:: Create a generic structure to not repeat code
 class GetRepositoryDataSource @Inject constructor(
     private val getRepositoriesUseCase: GetRepositoriesUseCase
 ) : PositionalDataSource<GithubRepositoryModel>() {
 
-    private val page = PageParams(DEFAULT_PAGE_LIMIT, 0)
+    private val page =
+        PageParams(
+            DEFAULT_PAGE_LIMIT,
+            0
+        )
+
     private lateinit var actionRetry: () -> Unit
 
     val state = MutableLiveData<DataSourceState>()

@@ -2,13 +2,13 @@ package br.com.grabrielmarcos.githubhilt.plugin.room
 
 import android.app.Application
 import android.content.Context
-import androidx.room.Database
-import androidx.room.Room
-import androidx.room.RoomDatabase
+import androidx.room.*
 import br.com.grabrielmarcos.githubhilt.model.GithubRepositoriesModel
 import br.com.grabrielmarcos.githubhilt.model.GithubRepositoryModel
+import br.com.grabrielmarcos.githubhilt.model.OwnerConverter
 
 @Database(entities = [GithubRepositoryModel::class], version = 1, exportSchema = true)
+@TypeConverters(OwnerConverter::class)
 abstract class GithubRepositoryDatabase : RoomDatabase() {
 
     abstract fun getRepositoryDao(): GithubRepositoryDAO

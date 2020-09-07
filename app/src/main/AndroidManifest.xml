@@ -13,13 +13,15 @@
         android:supportsRtl="true"
         android:name=".plugin.main.GithubRepositoriesApplication"
         android:theme="@style/AppTheme">
-        <activity android:name=".feature.repositories.view.MainActivity">
+        <activity android:name="br.com.grabrielmarcos.githubhilt.feature.repositories.home.view.GithubRepositoriesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".feature.repositories.detail.view.GithubDetailActivity" />
+        <activity android:name=".feature.repositories.webview.view.GithubWebViewActivity" />
     </application>
 
 </manifest>

@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">GithubHilt</string>
+    <string name="app_name">Github Repositories</string>
+
+
+    <!-- CONTENT DESCRIPTION -->
+    <string name="avatar_icon_content_description">User profile image on github</string>
+    <string name="fork_icon_content_description">Forks icon from the mentioned repository</string>
+    <string name="star_icon_content_description">Stars icon from the mentioned repository</string>
+
+    <string name="divider_pr_counts">/</string>
+
+
+    <string name="header_pullrequest_opened">%s opened</string>
+    <string name="header_pullrequest_closed">%s closed</string>
+
 </resources>

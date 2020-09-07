@@ -1,4 +1,4 @@
-package br.com.grabrielmarcos.githubhilt.feature.repositories.extetions
+package br.com.grabrielmarcos.githubhilt.feature.repositories.home.extetions
 
 import android.view.View
 

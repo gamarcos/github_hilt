@@ -17,6 +17,6 @@ interface GithubRepositoryDAO {
     @Query("SELECT * FROM repository")
     fun selectAllRepositories(): Flow<List<GithubRepositoryModel>>
 
-    @Query("SELECT * FROM repository WHERE name = :name")
-    fun getRepositoryByName(name: String): Flow<GithubRepositoryModel>
+    @Query("SELECT * FROM repository WHERE id = :id")
+    fun getRepositoryById(id: Long): Flow<GithubRepositoryModel>
 }

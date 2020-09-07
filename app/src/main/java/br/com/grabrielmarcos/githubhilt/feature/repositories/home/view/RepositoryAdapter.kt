@@ -1,10 +1,10 @@
-package br.com.grabrielmarcos.githubhilt.feature.repositories.view
+package br.com.grabrielmarcos.githubhilt.feature.repositories.home.view
 
 import android.view.ViewGroup
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import br.com.grabrielmarcos.githubhilt.feature.repositories.gateway.DataSourceState
+import br.com.grabrielmarcos.githubhilt.feature.repositories.home.gateway.DataSourceState
 import br.com.grabrielmarcos.githubhilt.model.GithubRepositoryModel
 
 class RepositoryAdapter(

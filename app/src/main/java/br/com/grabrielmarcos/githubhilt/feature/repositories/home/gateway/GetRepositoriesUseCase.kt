@@ -1,11 +1,9 @@
-package br.com.grabrielmarcos.githubhilt.feature.repositories.gateway
+package br.com.grabrielmarcos.githubhilt.feature.repositories.home.gateway
 
 import br.com.grabrielmarcos.githubhilt.feature.base.business.UseCase
-import br.com.grabrielmarcos.githubhilt.feature.repositories.business.PageParams
+import br.com.grabrielmarcos.githubhilt.feature.base.business.PageParams
 import br.com.grabrielmarcos.githubhilt.model.GithubRepositoriesModel
-import br.com.grabrielmarcos.githubhilt.model.GithubRepositoryModel
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
 class GetRepositoriesUseCase @Inject constructor(

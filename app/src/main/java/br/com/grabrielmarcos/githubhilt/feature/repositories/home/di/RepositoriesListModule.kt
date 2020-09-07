@@ -1,8 +1,8 @@
-package br.com.grabrielmarcos.githubhilt.feature.repositories.di
+package br.com.grabrielmarcos.githubhilt.feature.repositories.home.di
 
 import androidx.lifecycle.ViewModel
-import br.com.grabrielmarcos.githubhilt.feature.repositories.gateway.GithubRepository
-import br.com.grabrielmarcos.githubhilt.feature.repositories.gateway.RepositoriesViewModel
+import br.com.grabrielmarcos.githubhilt.feature.repositories.home.gateway.GithubRepository
+import br.com.grabrielmarcos.githubhilt.feature.repositories.home.gateway.RepositoriesViewModel
 import br.com.grabrielmarcos.githubhilt.plugin.di.viewmodel.ViewModelKey
 import br.com.grabrielmarcos.githubhilt.plugin.repository.GithubRepositoryImpl
 import dagger.Binds

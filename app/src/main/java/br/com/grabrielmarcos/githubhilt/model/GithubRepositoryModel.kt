@@ -1,8 +1,6 @@
 package br.com.grabrielmarcos.githubhilt.model
 
-import androidx.room.Embedded
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import androidx.room.*
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
@@ -10,30 +8,26 @@ import java.io.Serializable
 data class GithubRepositoriesModel(
     @field:SerializedName("items")
     val items: List<GithubRepositoryModel> = emptyList()
-)
+) : Serializable
 
 @Entity(tableName = "repository")
 data class GithubRepositoryModel(
     @PrimaryKey
+    @field:SerializedName("id")
+    val id: Long,
     @field:SerializedName("name")
-    val name: String = "",
+    val name: String? = "",
+    @field:SerializedName("full_name")
+    val full_name: String? = "",
     @field:SerializedName("description")
     val description: String? = "",
-    @Embedded
+    @TypeConverters(OwnerConverter::class)
+    @ColumnInfo(name = "owner_repository")
     @field:SerializedName("owner")
-    val owner: Owner?,
+    var owner: GithubOwnerModel?,
     @field:SerializedName("stargazers_count")
     val starts: Int? = 0,
     @field:SerializedName("forks_count")
     val forks: Int? = 0
 ) : Serializable
 
-@Entity(tableName = "owner")
-data class Owner(
-    @field:SerializedName("login")
-    val login: String? = "",
-    @field:SerializedName("avatar_url")
-    val avatar: String? = "",
-    @field:SerializedName("url")
-    val url: String? = ""
-) : Serializable

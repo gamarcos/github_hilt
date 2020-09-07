@@ -24,7 +24,7 @@ abstract class UseCase<P, R> {
             .apply(dsl)
 
         scope.launch {
-            withContext(Dispatchers.IO) {
+            withContext(Dispatchers.Main) {
                 execute(param)
                     .filter { guard(param) }
                     .onStart { dispatcher.onLoading(Result.Loading) }

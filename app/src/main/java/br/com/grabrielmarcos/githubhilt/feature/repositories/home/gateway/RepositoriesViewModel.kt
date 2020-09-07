@@ -1,10 +1,10 @@
-package br.com.grabrielmarcos.githubhilt.feature.repositories.gateway
+package br.com.grabrielmarcos.githubhilt.feature.repositories.home.gateway
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.viewModelScope
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import br.com.grabrielmarcos.githubhilt.feature.base.gateway.BaseViewModel
+import br.com.grabrielmarcos.githubhilt.feature.base.gateway.PageListConfig
 import br.com.grabrielmarcos.githubhilt.model.GithubRepositoryModel
 import javax.inject.Inject
 
@@ -18,15 +18,8 @@ class RepositoriesViewModel @Inject constructor(
     var isNetworkAvailable = true
 
     init {
-        val config = PagedList.Config.Builder()
-        .setPageSize(5)
-        .setInitialLoadSizeHint(5 * 2)
-        .setEnablePlaceholders(false)
-        .build()
-
-        actionRepositories = LivePagedListBuilder<Int, GithubRepositoryModel>(factory, config).build()
+        actionRepositories = LivePagedListBuilder<Int, GithubRepositoryModel>(factory, PageListConfig.config).build()
     }
 
     fun retryCharactersLoad() = factory.retryCharactersLoad()
-
 }
