@@ -9,6 +9,8 @@ import br.com.grabrielmarcos.githubhilt.feature.base.view.BaseActivity
 import br.com.grabrielmarcos.githubhilt.feature.base.view.Navigation
 import br.com.grabrielmarcos.githubhilt.feature.repositories.detail.business.RepositoryData
 import br.com.grabrielmarcos.githubhilt.feature.repositories.detail.view.GithubDetailActivity
+import br.com.grabrielmarcos.githubhilt.feature.repositories.home.extetions.hide
+import br.com.grabrielmarcos.githubhilt.feature.repositories.home.extetions.show
 import br.com.grabrielmarcos.githubhilt.feature.repositories.home.gateway.DataSourceState
 import br.com.grabrielmarcos.githubhilt.feature.repositories.home.gateway.RepositoriesViewModel
 import kotlinx.android.synthetic.main.activity_main.*
@@ -84,9 +86,15 @@ class GithubRepositoriesActivity : BaseActivity() {
         }
     }
 
-    private fun showErrorState() {}
+    private fun showErrorState() {
+        repositories_progress.hide()
+    }
 
-    private fun showLoadingState() {}
+    private fun showLoadingState() {
+        repositories_progress.show()
+    }
 
-    private fun showDoneState() {}
+    private fun showDoneState() {
+        repositories_progress.hide()
+    }
 }

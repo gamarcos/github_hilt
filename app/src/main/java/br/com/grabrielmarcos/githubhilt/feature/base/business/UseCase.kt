@@ -1,5 +1,6 @@
 package br.com.grabrielmarcos.githubhilt.feature.base.business
 
+import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.asLiveData
 import kotlinx.coroutines.CoroutineScope
@@ -53,5 +54,6 @@ abstract class UseCase<P, R> {
         return true
     }
 
-    protected abstract fun execute(param: P?): Flow<R>
+    @VisibleForTesting
+    abstract fun execute(param: P?): Flow<R>
 }

@@ -13,13 +13,10 @@ class RepositoriesViewModel @Inject constructor(
 ) : BaseViewModel() {
 
     val actionRepositoryDataSourceState = factory.state
-    val actionRepositories: LiveData<PagedList<GithubRepositoryModel>>
+    val actionRepositories: LiveData<PagedList<GithubRepositoryModel>> =
+        LivePagedListBuilder<Int, GithubRepositoryModel>(factory, PageListConfig.config).build()
 
     var isNetworkAvailable = true
-
-    init {
-        actionRepositories = LivePagedListBuilder<Int, GithubRepositoryModel>(factory, PageListConfig.config).build()
-    }
 
     fun retryCharactersLoad() = factory.retryCharactersLoad()
 }

@@ -1,5 +1,6 @@
 package br.com.grabrielmarcos.githubhilt.feature.repositories.detail.gateway
 
+import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import br.com.grabrielmarcos.githubhilt.feature.base.gateway.BaseViewModel
@@ -7,8 +8,11 @@ import br.com.grabrielmarcos.githubhilt.feature.repositories.detail.business.Rep
 import br.com.grabrielmarcos.githubhilt.model.GithubDetailModel
 import javax.inject.Inject
 
-private const val STATE_OPEN = "open"
-private const val STATE_CLOSE = "close"
+@VisibleForTesting
+const val STATE_OPEN = "open"
+
+@VisibleForTesting
+const val STATE_CLOSE = "close"
 
 class GithubDetailViewModel @Inject constructor(
     private val getRepositoryDetailUseCase: GetRepositoryDetailUseCase
@@ -19,7 +23,7 @@ class GithubDetailViewModel @Inject constructor(
     internal var detailOnLoading: MutableLiveData<Unit> = MutableLiveData()
     internal var detailOnSuccess: MutableLiveData<List<GithubDetailModel>> = MutableLiveData()
     internal var detailOnError: MutableLiveData<Unit> = MutableLiveData()
-    internal var detailHeaderValue: MutableLiveData<Pair<Int, Int>> = MutableLiveData()
+    var detailHeaderValue: MutableLiveData<Pair<Int, Int>> = MutableLiveData()
 
     fun getRepositoryDetail(param: RepositoryData?) {
         getRepositoryDetailUseCase.asFlow(viewModelScope, param) {
