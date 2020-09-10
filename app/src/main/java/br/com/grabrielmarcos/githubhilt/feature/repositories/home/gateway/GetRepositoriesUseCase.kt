@@ -10,6 +10,8 @@ class GetRepositoriesUseCase @Inject constructor(
     private val repository: GithubRepository
 ): UseCase<PageParams, GithubRepositoriesModel>() {
     override fun execute(param: PageParams?): Flow<GithubRepositoriesModel> {
-        return repository.getGithubRepositories(param!!)
+        return repository.getGithubRepositories(param!!).map {
+            it
+        }
     }
 }

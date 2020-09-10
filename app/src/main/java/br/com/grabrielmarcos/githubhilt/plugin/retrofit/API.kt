@@ -15,7 +15,7 @@ interface API {
         @Query("per_page") quantity: Int
     ): Flow<GithubRepositoriesModel>
 
-    @GET("user/{user_name}")
+    @GET("users/{user_name}")
     fun requestGithubOwner(
         @Path("user_name") userName: String
     ): Flow<GithubOwnerModel>

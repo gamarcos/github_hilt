@@ -8,7 +8,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface GithubRepository {
     fun deleteRepositories()
-    fun saveRepositories(repos: GithubRepositoriesModel)
     fun getRepositoryByName(id: Long): Flow<GithubRepositoryModel>
     fun getGithubRepositories(pageParams: PageParams): Flow<GithubRepositoriesModel>
     fun getRepositoryOwner(ageParams: PageParams): Flow<GithubOwnerModel>

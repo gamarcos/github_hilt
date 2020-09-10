@@ -1,6 +1,7 @@
 package br.com.grabrielmarcos.githubhilt.feature.repositories.detail.view
 
 import android.os.Bundle
+import android.os.Handler
 import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -48,7 +49,10 @@ class GithubDetailActivity: BaseActivity() {
             detail_progress.hide()
         })
 
-        viewmodel.detailOnError.observe(this, Observer { detail_progress.hide() })
+        viewmodel.detailOnError.observe(this, Observer {
+            detail_progress.hide()
+            Handler().postDelayed( { finish() }, 1000)
+        })
 
         viewmodel.detailOnLoading.observe(this, Observer { detail_progress.show() })
 

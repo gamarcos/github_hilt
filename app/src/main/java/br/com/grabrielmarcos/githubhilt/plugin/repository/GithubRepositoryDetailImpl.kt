@@ -16,6 +16,6 @@ class GithubRepositoryDetailImpl @Inject constructor(
     }
 
     override fun getGithubOwner(login: String): Flow<GithubOwnerModel> {
-        TODO("Not yet implemented")
+        return api.requestGithubOwner(login)
     }
 }

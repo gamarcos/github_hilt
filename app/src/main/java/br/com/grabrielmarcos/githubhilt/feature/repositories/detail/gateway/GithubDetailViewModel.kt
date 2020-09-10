@@ -34,6 +34,7 @@ class GithubDetailViewModel @Inject constructor(
             onLoading = { detailOnLoading.value = Unit }
             onError = {
                 detailOnError.value = Unit
+                postErrorMessage(it.throwable.message)
             }
         }
     }

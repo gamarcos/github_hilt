@@ -7,7 +7,7 @@ import java.io.Serializable
 @Entity(tableName = "repositories")
 data class GithubRepositoriesModel(
     @field:SerializedName("items")
-    val items: List<GithubRepositoryModel> = emptyList()
+    var items: List<GithubRepositoryModel> = emptyList()
 ) : Serializable
 
 @Entity(tableName = "repository")

@@ -1,6 +1,7 @@
 package br.com.grabrielmarcos.githubhilt.feature.repositories.home.gateway
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import br.com.grabrielmarcos.githubhilt.feature.base.gateway.BaseViewModel

@@ -7,9 +7,8 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface GithubRepositoryDAO {
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertRepositories(repositories: GithubRepositoryModel)
+    fun insertRepositories(repositories: List<GithubRepositoryModel>)
 
     @Query("DELETE FROM repository")
     fun deleteAllRepositories()

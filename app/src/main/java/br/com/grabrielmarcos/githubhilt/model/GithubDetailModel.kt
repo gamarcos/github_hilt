@@ -20,5 +20,5 @@ data class GithubDetailModel(
     @TypeConverters(OwnerConverter::class)
     @ColumnInfo(name = "owner_detail")
     @field:SerializedName("user")
-    val owner: GithubOwnerModel?
+    var owner: GithubOwnerModel?
 ) : Serializable
