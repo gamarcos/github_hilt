@@ -32,9 +32,9 @@ https://api.github.com/repos/<criador>/<repositório>/pulls
  - All Repositories
  
 ### Improvements
- - tests
+ - ~tests~
  - Create interface tests
  - Improve UI
- - Add asynchronous call to get user name
- - Create local database
+ - ~Add asynchronous call to get user name~
+ - Create local database 
  - Add HILT
